@@ -1017,7 +1017,10 @@ pub fn is_modifier(evt: &KeyEvent) -> bool {
     }
 }
 
+#[allow(unreachable_code)]
 pub fn check_software_update() {
+    // Custom build: software update check is disabled.
+    return;
     if is_custom_client() {
         return;
     }
@@ -1159,7 +1162,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "https://rd.yide.work:90".to_owned()
 }
 
 #[inline]
